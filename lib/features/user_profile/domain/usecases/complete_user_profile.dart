@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:rinavent/core/common/entities/category.dart';
-import 'package:rinavent/core/common/entities/user.dart';
-import 'package:rinavent/core/usecase/usecase.dart';
-import 'package:rinavent/core/utils/typedef.dart';
-import 'package:rinavent/features/user_profile/domain/repositories/user_profile_repository.dart';
+import 'package:glamee/core/common/entities/category.dart';
+import 'package:glamee/core/common/entities/user.dart';
+import 'package:glamee/core/usecase/usecase.dart';
+import 'package:glamee/core/utils/typedef.dart';
+import 'package:glamee/features/user_profile/domain/repositories/user_profile_repository.dart';
 
 class CompleteUserProfile implements Usecase<User, CompleteUserProfileParams> {
   final UserProfileRepository userProfileRepository;

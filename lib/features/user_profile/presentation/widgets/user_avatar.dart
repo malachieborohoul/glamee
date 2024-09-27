@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:rinavent/core/contants/padding.dart';
-import 'package:rinavent/core/theme/app_palette.dart';
+import 'package:glamee/core/contants/padding.dart';
+import 'package:glamee/core/theme/app_palette.dart';
 
 class UserAvatar extends StatelessWidget {
   const UserAvatar({

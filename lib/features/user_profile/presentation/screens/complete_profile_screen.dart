@@ -5,18 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:rinavent/core/common/cubits/app_user/app_user_cubit.dart';
-import 'package:rinavent/core/common/widgets/auth_field.dart';
-import 'package:rinavent/core/common/widgets/custom_button.dart';
-import 'package:rinavent/core/contants/padding.dart';
-import 'package:rinavent/core/theme/app_palette.dart';
-import 'package:rinavent/core/utils/loader_dialog.dart';
-import 'package:rinavent/core/utils/pick_image.dart';
-import 'package:rinavent/core/utils/show_snackbar.dart';
-import 'package:rinavent/features/auth/presentation/screens/test.dart';
-import 'package:rinavent/features/user_profile/presentation/bloc/user_profile/user_profile_bloc.dart';
-import 'package:rinavent/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
-import 'package:rinavent/features/user_profile/presentation/widgets/user_avatar.dart';
+import 'package:glamee/core/common/cubits/app_user/app_user_cubit.dart';
+import 'package:glamee/core/common/widgets/auth_field.dart';
+import 'package:glamee/core/common/widgets/custom_button.dart';
+import 'package:glamee/core/contants/padding.dart';
+import 'package:glamee/core/theme/app_palette.dart';
+import 'package:glamee/core/utils/loader_dialog.dart';
+import 'package:glamee/core/utils/pick_image.dart';
+import 'package:glamee/core/utils/show_snackbar.dart';
+import 'package:glamee/features/auth/presentation/screens/test.dart';
+import 'package:glamee/features/user_profile/presentation/bloc/user_profile/user_profile_bloc.dart';
+import 'package:glamee/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
+import 'package:glamee/features/user_profile/presentation/widgets/user_avatar.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   static route() => PageRouteBuilder(pageBuilder: (_, animation, __) {

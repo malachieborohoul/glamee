@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:fpdart/fpdart.dart';
-import 'package:rinavent/core/common/entities/category.dart';
-import 'package:rinavent/core/error/exceptions.dart';
-import 'package:rinavent/core/error/failures.dart';
-import 'package:rinavent/core/utils/typedef.dart';
-import 'package:rinavent/features/auth/data/models/user_model.dart';
-import 'package:rinavent/features/user_profile/data/datasources/user_profile_remote_datasource.dart';
-import 'package:rinavent/features/user_profile/domain/repositories/user_profile_repository.dart';
+import 'package:glamee/core/common/entities/category.dart';
+import 'package:glamee/core/error/exceptions.dart';
+import 'package:glamee/core/error/failures.dart';
+import 'package:glamee/core/utils/typedef.dart';
+import 'package:glamee/features/auth/data/models/user_model.dart';
+import 'package:glamee/features/user_profile/data/datasources/user_profile_remote_datasource.dart';
+import 'package:glamee/features/user_profile/domain/repositories/user_profile_repository.dart';
 
 class UserProfileRepositoryImpl implements UserProfileRepository {
   final UserProfileRemoteDatasource userProfileRemoteDatasource;

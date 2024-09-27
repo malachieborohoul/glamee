@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rinavent/core/common/cubits/app_user/app_user_cubit.dart';
-import 'package:rinavent/core/common/entities/category.dart';
-import 'package:rinavent/core/common/entities/user.dart';
-import 'package:rinavent/features/user_profile/domain/usecases/complete_user_profile.dart';
+import 'package:glamee/core/common/cubits/app_user/app_user_cubit.dart';
+import 'package:glamee/core/common/entities/category.dart';
+import 'package:glamee/core/common/entities/user.dart';
+import 'package:glamee/features/user_profile/domain/usecases/complete_user_profile.dart';
 
 part 'user_profile_event.dart';
 part 'user_profile_state.dart';

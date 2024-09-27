@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rinavent/core/common/widgets/custom_button.dart';
-import 'package:rinavent/core/contants/padding.dart';
-import 'package:rinavent/core/theme/app_palette.dart';
-import 'package:rinavent/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
-import 'package:rinavent/features/user_profile/presentation/screens/select_category_screen.dart';
-import 'package:rinavent/features/auth/presentation/widgets/progress_bar.dart';
+import 'package:glamee/core/common/widgets/custom_button.dart';
+import 'package:glamee/core/contants/padding.dart';
+import 'package:glamee/core/theme/app_palette.dart';
+import 'package:glamee/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
+import 'package:glamee/features/auth/presentation/widgets/progress_bar.dart';
 import 'package:vibration/vibration.dart';
 
 class SelectAgeScreen extends StatefulWidget {
@@ -164,7 +163,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
             onPressed: () {
               context.read<CompleteUserProfileCubit>().selectAge(selectedIndex+startAge);
 
-              Navigator.push(context, SelectCategoryScreen.route());
+              // Navigator.push(context, SelectCategoryScreen.route());
             }),
       ),
     ));
