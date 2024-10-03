@@ -34,7 +34,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
         phoneNumber: event.phoneNumber,
         countryCode: event.countryCode,
         image: event.image,
-        selectedCategories: event.selectedCategories));
+        ));
 
     res.fold((l) => emit(UserProfileFailure(l.message)), (r) {
       _appUserCubit.updateUser(r);

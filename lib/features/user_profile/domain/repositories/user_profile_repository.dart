@@ -14,6 +14,5 @@ abstract interface class UserProfileRepository {
     required String phoneNumber,
     required String countryCode,
     required File? image,
-    required List<Category> selectedCategories
   });
 }

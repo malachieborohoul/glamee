@@ -19,9 +19,9 @@ class CompleteUserProfileCubit extends Cubit<CompleteUserProfileState> {
   }
 
   // Exemple de méthode pour sélectionner une liste de catégories
-  void selectCategories(List<Category> categories) {
-    emit(state.copyWith(categories: categories));
-  }
+  // void selectCategories(List<Category> categories) {
+  //   emit(state.copyWith(categories: categories));
+  // }
 
   // Exemple de méthode pour changer l'avatar
   void selectAvatar(File? avatar) {

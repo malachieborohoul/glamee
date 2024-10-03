@@ -21,7 +21,7 @@ class CompleteUserProfile implements Usecase<User, CompleteUserProfileParams> {
         phoneNumber: params.phoneNumber,
         countryCode: params.countryCode,
         image: params.image,
-        selectedCategories: params.selectedCategories);
+        );
   }
 }
 
@@ -35,7 +35,6 @@ class CompleteUserProfileParams {
   final String phoneNumber;
   final String countryCode;
   final File? image;
-  final List<Category> selectedCategories;
 
   const CompleteUserProfileParams({
     required this.id,
@@ -46,7 +45,6 @@ class CompleteUserProfileParams {
     required this.phoneNumber,
     required this.countryCode,
     required this.image,
-    required this.selectedCategories,
   });
 
  

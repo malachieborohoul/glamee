@@ -17,7 +17,6 @@ final class UserProfileCompleteUserProfile extends UserProfileEvent{
   final String phoneNumber;
   final String countryCode;
   final File? image;
-  final List<Category> selectedCategories;
 
-  const UserProfileCompleteUserProfile(this.id, this.email, this.name, this.gender, this.age, this.phoneNumber, this.countryCode, this.image, this.selectedCategories);
+  const UserProfileCompleteUserProfile(this.id, this.email, this.name, this.gender, this.age, this.phoneNumber, this.countryCode, this.image);
 }

@@ -23,7 +23,7 @@ class UserProfileRepositoryImpl implements UserProfileRepository {
       required String phoneNumber,
       required String countryCode,
       required File? image,
-      required List<Category> selectedCategories}) async {
+      }) async {
     try {
       UserModel userModel = UserModel(
           id: id,
@@ -46,7 +46,7 @@ class UserProfileRepositoryImpl implements UserProfileRepository {
       
 
 
-      final user = await userProfileRemoteDatasource.completeUserProfile(userModel, selectedCategories);
+      final user = await userProfileRemoteDatasource.completeUserProfile(userModel);
       return right(user);
     } on ServerException catch (e) {
       return left(Failure(e.message));
