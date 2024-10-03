@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:glamee/core/common/entities/category.dart';
 
 part 'complete_user_profile_state.dart';
 

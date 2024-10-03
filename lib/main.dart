@@ -4,7 +4,6 @@ import 'package:glamee/core/common/cubits/app_user/app_user_cubit.dart';
 import 'package:glamee/core/theme/theme.dart';
 import 'package:glamee/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:glamee/features/auth/presentation/screens/onboarding_screen.dart';
-import 'package:glamee/features/auth/presentation/screens/splash_screen.dart';
 import 'package:glamee/features/user_profile/presentation/bloc/user_profile/user_profile_bloc.dart';
 import 'package:glamee/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
 

@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:fpdart/fpdart.dart';
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/error/exceptions.dart';
 import 'package:glamee/core/error/failures.dart';
 import 'package:glamee/core/utils/typedef.dart';

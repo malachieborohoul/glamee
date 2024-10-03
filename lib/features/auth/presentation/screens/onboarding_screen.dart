@@ -1,23 +1,21 @@
-
 import 'package:flutter/material.dart';
 import 'package:glamee/core/common/widgets/custom_button.dart';
 import 'package:glamee/core/contants/constants.dart';
+import 'package:glamee/core/contants/padding.dart';
 import 'package:glamee/core/theme/app_palette.dart';
 import 'package:glamee/features/auth/presentation/screens/signin_screen.dart';
-
+import 'package:glamee/features/auth/presentation/widgets/custom_rich_text.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingScreen extends StatefulWidget {
-
-    static route() => PageRouteBuilder(pageBuilder: (_, animation, __) {
+  static route() => PageRouteBuilder(pageBuilder: (_, animation, __) {
         return FadeTransition(
           opacity: animation,
           child: const OnboardingScreen(),
         );
       });
   const OnboardingScreen({super.key});
-  
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -47,14 +45,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-  
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          Image.asset(
-              '${Constants.assetImg}background.webp',
-            ),
           PageView(
             onPageChanged: (int page) {
               setState(() {
@@ -66,7 +61,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               makePage(
                 image: "group.webp",
                 title: "Beauty Made Simple Wellness Made Essential",
-                content: "Transform Your Look, Transform Your Life, Your Ultimate Desire Awaits Here.",
+                content:
+                    "Transform Your Look, Transform Your Life, Your Ultimate Desire Awaits Here.",
               ),
               makePage(
                   image: "graph.webp",
@@ -78,12 +74,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           Container(
-            margin: const EdgeInsets.only(bottom: 40),
+            margin: EdgeInsets.only(bottom: size.height * .15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _buildIndicator(),
             ),
-          )
+          ),
+          currentIndex < 1
+              ? Container(
+                  margin: EdgeInsets.only(bottom: size.height * .05),
+                  child: CustomRichText(
+                    primaryText: "Skip to",
+                    secondaryText: " Sign In",
+                    onTap: () {
+                      Navigator.push(context, SigninScreen.route());
+                    },
+                  ),
+                )
+              : Padding(
+                  padding: EdgeInsets.only(
+                    bottom: size.height * .05,
+                    left: AppPadding.appPadding,
+                    right: AppPadding.appPadding,
+                  ),
+                  child:
+                      CustomButton(buttonText: "Get Started", onPressed: () {}),
+                )
         ],
       ),
     );
@@ -91,54 +107,53 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Widget makePage(
       {image, title, content, button = false, SharedPreferences? prefs}) {
-    return Container(
-      padding: const EdgeInsets.only(left: 50, right: 50, bottom: 50),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Image.asset(
-              Constants.assetImg + image,
-            ),
+    return Stack(
+      children: [
+        Image.asset(
+          color: const Color.fromARGB(255, 236, 229, 229),
+          '${Constants.assetImg}background.webp',
+        ),
+        Container(
+          padding: const EdgeInsets.only(
+              left: AppPadding.appPadding,
+              right: AppPadding.appPadding,
+              bottom: 50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AppPadding.appPadding),
+                child: Image.asset(
+                  Constants.assetImg + image,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headlineSmall!,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: AppPadding.miniSpacer,
+              ),
+              Text(
+                content,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(color: AppPalette.greyColor),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+            ],
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-                color: AppPalette.gradient1, fontSize: 24, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Text(
-            content,
-            style: const TextStyle(
-                color: AppPalette.gradient1, fontSize: 15, fontWeight: FontWeight.w300),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          button == false
-              ? Container()
-              : GestureDetector(
-                  onTap: () {
-                    // Provider.of<NumberEntryProvider>(context, listen: false)
-                    //     .setCount(1);
-
-                    // introApp.num = 1;
-                    prefs!.setString('x-auth-token', '');
-
-                    Navigator.pushReplacement(
-                        context, SigninScreen.route());
-                  },
-                  child:  CustomButton( buttonText: "Commençons", onPressed: (){},))
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -149,7 +164,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         width: isActive ? 30 : 8,
         margin: const EdgeInsets.only(right: 5),
         decoration: BoxDecoration(
-            color: AppPalette.gradient2, borderRadius: BorderRadius.circular(5)));
+            color: AppPalette.gradient2,
+            borderRadius: BorderRadius.circular(5)));
   }
 
   List<Widget> _buildIndicator() {

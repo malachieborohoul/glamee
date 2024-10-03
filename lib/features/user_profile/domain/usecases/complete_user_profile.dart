@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/common/entities/user.dart';
 import 'package:glamee/core/usecase/usecase.dart';
 import 'package:glamee/core/utils/typedef.dart';
