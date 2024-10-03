@@ -5,6 +5,7 @@ import 'package:glamee/core/common/widgets/loader.dart';
 import 'package:glamee/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:glamee/features/auth/presentation/screens/signin_screen.dart';
 import 'package:glamee/features/auth/presentation/screens/test.dart';
+import 'package:glamee/features/user_profile/presentation/screens/select_gender_screen.dart';
 
 
 class LoadingScreen extends StatefulWidget {
@@ -45,7 +46,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 Navigator.pushReplacement(context, Test.route());
               }else{
                 
-                // Navigator.pushReplacement(context,  SelectGenderScreen.route());
+                Navigator.pushReplacement(context,  SelectGenderScreen.route());
                 
               }
               

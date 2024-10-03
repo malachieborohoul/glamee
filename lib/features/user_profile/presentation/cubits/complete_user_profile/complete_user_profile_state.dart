@@ -5,35 +5,33 @@ abstract class CompleteUserProfileState extends Equatable {
     this.gender,
     this.age,
     this.avatar,
-    this.categories,
+    // this.categories,
   });
 
   final String? gender;
   final int? age;
   final File? avatar;
-  final List<Category>? categories;
+  // final List<Category>? categories;
 
   CompleteUserProfileState copyWith({
     String? gender,
     int? age,
     File? avatar,
-    List<Category>? categories,
   }) {
     return CompleteUserProfileUpdated(
       gender: gender ?? this.gender,
       age: age ?? this.age,
       avatar: avatar ?? this.avatar,
-      categories: categories ?? this.categories,
     );
   }
 
   @override
-  List<Object?> get props => [gender, age, avatar, categories];
+  List<Object?> get props => [gender, age, avatar, ];
 }
 
 class CompleteUserProfileInitial extends CompleteUserProfileState {
   const CompleteUserProfileInitial()
-      : super(gender: null, age: null, avatar: null, categories: const []);
+      : super(gender: null, age: null, avatar: null, );
 }
 
 class CompleteUserProfileUpdated extends CompleteUserProfileState {
@@ -41,6 +39,5 @@ class CompleteUserProfileUpdated extends CompleteUserProfileState {
     super.gender,
     super.age,
     super.avatar,
-    super.categories,
   });
 }

@@ -25,7 +25,7 @@ class GenderCard extends StatelessWidget {
             gradient: LinearGradient(colors: [
               isSelected ? AppPalette.gradient1 : AppPalette.borderColor,
               isSelected ? AppPalette.gradient2 : AppPalette.borderColor,
-            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+            ], begin: Alignment.topLeft, end: Alignment.center),
             borderRadius: BorderRadius.circular(25)),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(

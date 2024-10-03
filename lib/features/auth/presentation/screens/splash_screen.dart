@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glamee/core/theme/app_palette.dart';
 import 'package:glamee/features/auth/presentation/screens/loading_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,9 +30,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  const Scaffold(
         body:  Center(
-      child: Text("glamee"),
+      child: Text("glamee", style:  TextStyle(color: AppPalette.gradient1, fontSize: 50, fontWeight: FontWeight.bold)),
     ));
 
 

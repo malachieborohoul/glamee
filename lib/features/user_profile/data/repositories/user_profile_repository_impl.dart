@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:fpdart/fpdart.dart';
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/error/exceptions.dart';
 import 'package:glamee/core/error/failures.dart';
 import 'package:glamee/core/utils/typedef.dart';
@@ -23,7 +22,7 @@ class UserProfileRepositoryImpl implements UserProfileRepository {
       required String phoneNumber,
       required String countryCode,
       required File? image,
-      required List<Category> selectedCategories}) async {
+      }) async {
     try {
       UserModel userModel = UserModel(
           id: id,
@@ -46,7 +45,7 @@ class UserProfileRepositoryImpl implements UserProfileRepository {
       
 
 
-      final user = await userProfileRemoteDatasource.completeUserProfile(userModel, selectedCategories);
+      final user = await userProfileRemoteDatasource.completeUserProfile(userModel);
       return right(user);
     } on ServerException catch (e) {
       return left(Failure(e.message));

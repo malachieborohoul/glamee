@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/common/entities/user.dart';
 import 'package:glamee/core/utils/typedef.dart';
 
@@ -14,6 +13,5 @@ abstract interface class UserProfileRepository {
     required String phoneNumber,
     required String countryCode,
     required File? image,
-    required List<Category> selectedCategories
   });
 }

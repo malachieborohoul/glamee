@@ -5,6 +5,7 @@ import 'package:glamee/core/contants/padding.dart';
 import 'package:glamee/core/theme/app_palette.dart';
 import 'package:glamee/features/user_profile/presentation/cubits/complete_user_profile/complete_user_profile_cubit.dart';
 import 'package:glamee/features/auth/presentation/widgets/progress_bar.dart';
+import 'package:glamee/features/user_profile/presentation/screens/complete_profile_screen.dart';
 import 'package:vibration/vibration.dart';
 
 class SelectAgeScreen extends StatefulWidget {
@@ -163,7 +164,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
             onPressed: () {
               context.read<CompleteUserProfileCubit>().selectAge(selectedIndex+startAge);
 
-              // Navigator.push(context, SelectCategoryScreen.route());
+              Navigator.push(context, CompleteProfileScreen.route());
             }),
       ),
     ));

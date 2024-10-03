@@ -1,13 +1,12 @@
 import 'dart:io';
 
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/error/exceptions.dart';
 import 'package:glamee/features/auth/data/models/user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract interface class UserProfileRemoteDatasource {
   Future<UserModel> completeUserProfile(
-      UserModel user, List<Category> selectedCategories);
+      UserModel user, );
 
   Future<String> uploadUserAvatar({
     required File image,
@@ -22,7 +21,7 @@ class UserProfileRemoteDatasourceImpl implements UserProfileRemoteDatasource {
 
   @override
   Future<UserModel> completeUserProfile(
-      UserModel user, List<Category> selectedCategories) async {
+      UserModel user) async {
     try {
       final userData = await supabaseClient
           .from('profiles')
@@ -32,21 +31,9 @@ class UserProfileRemoteDatasourceImpl implements UserProfileRemoteDatasource {
 
       final updatedUser = UserModel.fromMap(userData.first);
 
-      //Delete former ctagories association
+   
 
-      await supabaseClient
-          .from('profile_categories')
-          .delete()
-          .eq('profile_id', user.id);
-
-      //Add new categories associations
-      for (var category in selectedCategories) {
-        await supabaseClient.from('profile_categories').insert({
-          'profile_id': user.id,
-          'category_id': category.id,
-        });
-      }
-
+   
       return updatedUser;
     } on PostgrestException catch (e) {
 

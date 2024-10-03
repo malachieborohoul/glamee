@@ -11,6 +11,7 @@ import 'package:glamee/features/auth/presentation/screens/signup_screen.dart';
 import 'package:glamee/features/auth/presentation/screens/splash_screen.dart';
 import 'package:glamee/features/auth/presentation/widgets/custom_button_social.dart';
 import 'package:glamee/features/auth/presentation/widgets/custom_divider_with_text.dart';
+import 'package:glamee/features/auth/presentation/widgets/custom_rich_text.dart';
 
 class SigninScreen extends StatefulWidget {
   static route() => PageRouteBuilder(pageBuilder: (_, animation, __) {
@@ -165,29 +166,34 @@ class _SigninScreenState extends State<SigninScreen> {
                         const SizedBox(
                           height: AppPadding.miniSpacer,
                         ),
-                        GestureDetector(
-                          onTap: () {
+
+                        CustomRichText(primaryText: "Don't you have an account?", secondaryText: "Sign Up", onTap: (){
                             Navigator.push(context, SignupSreen.route());
-                          },
-                          child: RichText(
-                              text: TextSpan(
-                                  text: "Don't you have an account? ",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(color: Colors.black),
-                                  children: [
-                                TextSpan(
-                                  text: "Sign Up",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
-                                          color: AppPalette.gradient1,
-                                          decoration: TextDecoration.underline),
-                                )
-                              ])),
-                        )
+
+                        },)
+                        // GestureDetector(
+                        //   onTap: () {
+                        //     Navigator.push(context, SignupSreen.route());
+                        //   },
+                        //   child: RichText(
+                        //       text: TextSpan(
+                        //           text: "Don't you have an account? ",
+                        //           style: Theme.of(context)
+                        //               .textTheme
+                        //               .bodySmall
+                        //               ?.copyWith(color: Colors.black),
+                        //           children: [
+                        //         TextSpan(
+                        //           text: "Sign Up",
+                        //           style: Theme.of(context)
+                        //               .textTheme
+                        //               .bodySmall
+                        //               ?.copyWith(
+                        //                   color: AppPalette.gradient1,
+                        //                   decoration: TextDecoration.underline),
+                        //         )
+                        //       ])),
+                        // )
                       ],
                     ),
                   );

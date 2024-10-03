@@ -224,7 +224,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                             phoneNumber,
                             countryCode,
                             completeUserProfile.avatar,
-                            completeUserProfile.categories!));
+                            ));
                   })
               : CustomButton(
                   buttonText: "Complete Profile",

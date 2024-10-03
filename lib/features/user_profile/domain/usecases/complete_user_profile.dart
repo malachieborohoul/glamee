@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:glamee/core/common/entities/category.dart';
 import 'package:glamee/core/common/entities/user.dart';
 import 'package:glamee/core/usecase/usecase.dart';
 import 'package:glamee/core/utils/typedef.dart';
@@ -21,7 +20,7 @@ class CompleteUserProfile implements Usecase<User, CompleteUserProfileParams> {
         phoneNumber: params.phoneNumber,
         countryCode: params.countryCode,
         image: params.image,
-        selectedCategories: params.selectedCategories);
+        );
   }
 }
 
@@ -35,7 +34,6 @@ class CompleteUserProfileParams {
   final String phoneNumber;
   final String countryCode;
   final File? image;
-  final List<Category> selectedCategories;
 
   const CompleteUserProfileParams({
     required this.id,
@@ -46,7 +44,6 @@ class CompleteUserProfileParams {
     required this.phoneNumber,
     required this.countryCode,
     required this.image,
-    required this.selectedCategories,
   });
 
  
