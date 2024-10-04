@@ -87,6 +87,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     primaryText: "Skip to",
                     secondaryText: " Sign In",
                     onTap: () {
+                      // prefs!.setString('x-auth-token', '');
+
                       Navigator.push(context, SigninScreen.route());
                     },
                   ),
@@ -98,7 +100,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     right: AppPadding.appPadding,
                   ),
                   child:
-                      CustomButton(buttonText: "Get Started", onPressed: () {}),
+                      CustomButton(buttonText: "Get Started", onPressed: () {
+                          prefs!.setString('x-auth-token', '');
+                          Navigator.push(context, SigninScreen.route());
+                      }),
                 )
         ],
       ),
